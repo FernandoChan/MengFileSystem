@@ -1,4 +1,6 @@
-﻿# os_filesystem - 一个虚拟文件系统（C++）
+﻿# MengFileSystem —— 一个仿linux虚拟文件系统（C++）
+
+forked from [windcode/os_filesystem](https://github.com/windcode/os_filesystem)
 
 ## 简介
 这是一个仿linux的虚拟文件系统，系统由一个虚拟磁盘文件承载，以文件读写模拟磁盘读写，不涉及底层驱动。
