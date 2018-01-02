@@ -923,19 +923,19 @@ bool Userdel(char username[])	//用户删除
 	group_Inode.i_size = strlen(buf);	//更新文件大小
 	WriteFile(group_Inode, group_Inode_Addr, buf);	//将修改后的内容写回文件中
 
-													////恢复现场，回到原来的目录
-													//strcpy(Cur_User_Name, bak_Cur_User_Name);
-													//strcpy(Cur_User_Dir_Name, bak_Cur_User_Dir_Name);
-													//Cur_Dir_Addr = bak_Cur_Dir_Addr;
-													//strcpy(Cur_Dir_Name, bak_Cur_Dir_Name);
+	////恢复现场，回到原来的目录
+	//strcpy(Cur_User_Name, bak_Cur_User_Name);
+	//strcpy(Cur_User_Dir_Name, bak_Cur_User_Dir_Name);
+	//Cur_Dir_Addr = bak_Cur_Dir_Addr;
+	//strcpy(Cur_Dir_Name, bak_Cur_Dir_Name);
 
-													//删除用户目录	
+	//删除用户目录	
 	Cur_Dir_Addr = Root_Dir_Addr;	//当前用户目录地址设为根目录地址
 	strcpy(Cur_Dir_Name, "/");		//当前目录设为"/"
 	Cd(Cur_Dir_Addr, "home");
 	Rmdir(Cur_Dir_Addr, username);
 
-	// 如果在root用户进入a用户目录，删掉a用户，则卡在a目录下面了
+	// 【已改】如果在root用户进入a用户目录，删掉a用户，则卡在a目录下面了
 	// 【已改】此处应该改为：判断当前用户目录是否为a用户的目录（不能用），是则返回根目录，否则恢复为原来的目录
 
 	// User_Dir_to_be_deleted 为应该删除的用户目录
@@ -975,7 +975,7 @@ bool Userdel(char username[])	//用户删除
 		Cur_Dir_Addr = Root_Dir_Addr;	//当前用户目录地址设为根目录地址
 		strcpy(Cur_Dir_Name, "/");		//当前目录设为"/"
 
-										// 删除username目录
+		// 删除username目录
 		Cd(Cur_Dir_Addr, "home");
 		Rmdir(Cur_Dir_Addr, username);
 		// 回到/home/root
