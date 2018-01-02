@@ -2642,7 +2642,7 @@ void Cmd(char inputLine[])	//处理输入的命令
 			return;
 		else {
 			printf("%s: command not found...\n", inputCommand);
-			cout << "If you need help, please input 'help'." << endl;
+			cout << "If you need help, please type 'help'." << endl;
 		}
 	}
 	else {
@@ -2865,7 +2865,7 @@ void Cmd(char inputLine[])	//处理输入的命令
 			return;
 		else {
 			printf("%s: command not found...\n", inputCommand);
-			cout << "If you need help, please input 'help'." << endl;
+			cout << "If you need help, please type 'help'." << endl;
 		}
 	}
 }

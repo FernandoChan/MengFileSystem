@@ -74,7 +74,7 @@ If you need help, please type 'help'.
 -----------------------------------------
 $ ls
 ls: command not found...
-If you need help, please input 'help'.
+If you need help, please type 'help'.
 $ login
 username: root
 password:
